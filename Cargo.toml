@@ -1,0 +1,13 @@
+[package]
+authors = ["Bryan Maynard <bsgbryan@gmail.com>"]
+description = "A little guy that crawls the web, respectfully"
+edition = "2024"
+license = "MIT"
+name = "spydr"
+version = "0.1.0"
+
+[dependencies]
+reqwest = "0.12.20"
+scraper = "0.23.1"
+tokio = { version = "1.45.1", features = ["macros", "rt-multi-thread"] }
+url = "2.5.4"
