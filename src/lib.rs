@@ -2,6 +2,7 @@
 
 pub mod home_page;
 pub mod sources;
+pub mod web;
 
 pub(crate) mod collect;
 pub(crate) mod crawl;
