@@ -12,7 +12,7 @@ use crate::{
 
 pub async fn crawl() -> Option<HomePage> {
   if let Some(url)  = Url::parse("https://www.pcmag.com").ok() &&
-     let Some(page) = fetch(&url).await
+     let Some(page) = fetch(&url).await.ok()
   {
     let document = Html::parse_document(&page);
 

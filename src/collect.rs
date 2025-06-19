@@ -15,13 +15,13 @@ pub fn execute<'a>(
       Some(href) => {
         if href.starts_with(&format!("https://{domain}")) {
           match Url::parse(href) {
-            Ok(href) => out.push(href),
+            Ok(href) => if !out.contains(&href) { out.push(href) },
             Err(_)   => (),
           }
         }
         else {
           match Url::parse(&format!("https://{domain}{href}")) {
-            Ok(href) => out.push(href),
+            Ok(href) => if !out.contains(&href) { out.push(href) },
             Err(_)   => (),
           }
         }

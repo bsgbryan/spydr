@@ -1,4 +1,7 @@
-use scraper::{Html, Selector};
+use scraper::{
+  Html,
+  Selector,
+};
 use url::Url;
 
 use crate::{
@@ -14,7 +17,7 @@ pub async fn execute(
   subsections: Option<&str>,
 ) -> Option<HomePage> {
   if let Some(url)  = Url::parse(&format!("https://{domain}")).ok() &&
-     let Some(page) = fetch(&url).await
+     let Some(page) = fetch(&url).await.ok()
   {
     let document = Html::parse_document(&page);
 
